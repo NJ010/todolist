@@ -19,11 +19,6 @@ client.connect((err)=>{
     // if(err) throw err;
 });
 
-// app.get("/tasks", db.getTasks);
-// app.get("/tasks/:id", db.getTasksById);
-// app.post("/tasks", db.createTask);
-// app.put("/tasks/:id", db.updateTask);
-// app.delete("/tasks/:id", db.deleteTask);
 
 // insert into todolist1 values('learn new skills',default,current_timestamp)
 

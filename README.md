@@ -52,11 +52,14 @@ where name is todo list
 field is the coloumn we want to search and data is the actual data whose row we want to extract.
 
 simmilarly we can send get request to 
-## '/delete/:name/:task'
-## '/update/:name/:task'
+## '/delete/:name/:task'<==> '/update/:name/:task'
 
  to delete and update the status of any provided task.
 
 
 
+## How to run
 
+Just clone the repository and run command "nodemon" after cloning.
+
+remember before running do install all the pakages needed like nodemon,express, postgres using npm.

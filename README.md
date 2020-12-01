@@ -32,7 +32,7 @@ For creating new tables/ lists we will send a get request to  '/create/:name' wh
 
 To see the tasks and their status  we can send get request to either of these 
 
-'/show/:name/:priority'
+### '/show/:name/:priority'
  => this will take 2 parameters one will be name of the todo list and next will be the order in which you want the result;
 
 or

@@ -20,12 +20,12 @@ There can be multiple tables but each table will have same schema i.e.
 4) status : Bollean, Is the task completed or not (Default False)
 
 ## Approach ##
-## 1
+
 
 installing all needed pakages eg. nodemon, postgres, express.
 Create Postgre SQL instance on Google Cloud And establish connection with server.
 
-## 2
+
 
 For creating new tables/ lists we will send a get request to  '/create/:name' where name parameter will we the name of the to do list.
 

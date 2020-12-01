@@ -37,22 +37,22 @@ To see the tasks and their status  we can send get request to either of these
 
 or
 
-'/show/:name'
+### '/show/:name'
 => will take only one parameter and return result in order of priority only
 
 
 to insert any task we send a get request to 
-" /insert/:name/:task"
+### " /insert/:name/:task"
 where name is the name of todo list and task is the name of the task.
 
 
 To search for any task we send a get request to 
-'/search/:name/:field/:data'
+ ### '/search/:name/:field/:data'
 where name is todo list
 field is the coloumn we want to search and data is the actual data whose row we want to extract.
 
 simmilarly we can send get request to 
-'/delete/:name/:task'<==> '/update/:name/:task'
+### '/delete/:name/:task'<==> '/update/:name/:task'
 
  to delete and update the status of any provided task.
 

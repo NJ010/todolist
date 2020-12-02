@@ -60,6 +60,7 @@ simmilarly we can send get request to
 
 ## How to run
 
-Just clone the repository and run command "nodemon" after cloning.
+Just clone/Fork the repository to your system and then run command "nodemon" in the terminal.
+ 
 
 remember before running do install all the pakages needed like nodemon,express, postgres using npm.

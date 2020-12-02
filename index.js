@@ -102,7 +102,7 @@ app.get('/insert/:name/:task', (req,res) => {
     const query ="insert into "+table+" values ( '"+task+ "' ,default,default,default);";
 
     client.query(query , (err, result) => {
-        if (err) res.send("list does not exist");
+        if (err) return res.send("list does not exist");
         return res.send("Task inserted in list " +table);
 
         client.end();
@@ -119,6 +119,7 @@ app.get('/insert/:name/:task/:priority', (req,res) => {
 
     client.query(query , (err, result) => {
         if (err) return res.send("list does not exist");
+
         return res.send("Task inserted in list " +table);
 
         client.end();
@@ -153,7 +154,7 @@ app.get('/delete/:name/:task' ,(req,res)=>{
     const task =req.params.task;
 
     client.query("DELETE FROM "+ table +" WHERE task = '"+task+"';", (err, result) => {
-    if (err) return err;
+    if (err) return res.send(err);
     return res.send(`Task deleted`);
   });
 });

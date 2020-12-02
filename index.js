@@ -69,7 +69,7 @@ app.get('/show/:name/:priority', (req,res) => {
     client.query(temp , (err, result) => {
         if (err) return  err;
         
-         return res.send(result.rows[0]);
+         return res.send(result);
         
         client.end();
     }
@@ -86,7 +86,7 @@ app.get('/show/:name', (req,res) => {
 
     client.query(temp , (err, result) => {
         if (err) return res.send(err);
-        return res.send(result.rows[0]);
+        return res.send(result);
         client.end();
     }
   );
@@ -178,7 +178,7 @@ app.get('/search/:name/:field/:data',(req,res)=>{
 
     client.query(query , (err, result) => {
         if (err) return res.send("No such task exist");
-        return res.send(result.rows[0]);
+        return res.send(result);
 
         client.end();
     })

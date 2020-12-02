@@ -27,7 +27,7 @@ Create Postgre SQL instance on Google Cloud And establish connection with server
 
 
 
-For creating new tables/ lists we will send a get request to  '/create/:name' where name parameter will we the name of the to do list.
+For creating new tables/ lists we will send a get request to  ### '/create/:name' where name parameter will we the name of the to do list.
 
 
 To see the tasks and their status  we can send get request to either of these 

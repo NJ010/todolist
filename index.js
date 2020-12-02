@@ -1,5 +1,5 @@
 const express           = require('express');
-const {Client}     = require('pg'); 
+const {Client}          = require('pg'); 
 
 //Import pakages
 
@@ -16,8 +16,25 @@ const client = new Client({
 })
 
 client.connect((err)=>{
-    // if(err) throw err;
+    if(err) throw err;
 });
+
+
+//  Schema Todo {
+
+        // Task : String ,
+        // Priority : integer,
+        // Date : TimeStamp,
+        // Status : Bollean
+
+//  }
+
+// Tasks For the Assignment : CRUD Operations, Sort According to any column in the list.
+// Search for any task by Priority , Date , Task Name , Status.
+
+
+
+
 
 
 // insert into todolist1 values('learn new skills',default,current_timestamp)
@@ -47,12 +64,7 @@ app.get('/show/:name/:priority', (req,res) => {
  
     const name = req.params.name;
     const priority=req.params.priority;
-    // const query ="create table " + name + " (task text , status boolean default false, date timestamp default current_timestamp); ";
-
     const temp ="select * from "+name+" order by "+priority+ " desc;";
-
-
-    console.log(temp);
 
     client.query(temp , (err, result) => {
         if (err) return  err;
@@ -69,11 +81,7 @@ app.get('/show/:name/:priority', (req,res) => {
 app.get('/show/:name', (req,res) => {
  
     const name = req.params.name;
-    // const query ="create table " + name + " (task text , status boolean default false, date timestamp default current_timestamp); ";
-
     const temp ="select * from "+ name +" order by priority desc;";
-
-
     console.log(temp);
 
     client.query(temp , (err, result) => {
@@ -95,7 +103,6 @@ app.get('/insert/:name/:task', (req,res) => {
 
     client.query(query , (err, result) => {
         if (err) res.send("list does not exist");
-        // const resu = JSON.stringify(result);
         return res.send("Task inserted in list " +table);
 
         client.end();
@@ -112,7 +119,6 @@ app.get('/insert/:name/:task/:priority', (req,res) => {
 
     client.query(query , (err, result) => {
         if (err) return res.send("list does not exist");
-        // const resu = JSON.stringify(result);
         return res.send("Task inserted in list " +table);
 
         client.end();
@@ -131,7 +137,6 @@ app.get('/update/:name/:task', (req,res) => {
     console.log(query);
     client.query(query , (err, result) => {
         if (err) return res.send("task does not exist");
-        // const resu = JSON.stringify(result);
         return res.send("Task inserted in list " +table);
 
         client.end();
@@ -161,7 +166,9 @@ app.get('/search/:name/:field/:data',(req,res)=>{
     const field =req.params.field;
     const data =req.params.data;
     var query;
-    console.log(isNaN(data));
+
+    // console.log(isNaN(data)); // check if the query is an integer or a string 
+
     if(isNaN(data)) query = "select * from "+table+ " where "+field+" = '"+ data+"' ; ";
 
     else query = "select * from "+table+ " where "+field+" = "+ data+" ; ";
